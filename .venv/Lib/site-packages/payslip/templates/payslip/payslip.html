@@ -1,0 +1,167 @@
+{% load i18n payslip_tags static %}
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>{% trans "Payslip" %}: {{ employee }} / {{ date_start }} - {{ date_end }}</title>
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+	<link href="{% static "payslip/css/payslip.css" %}" media="all" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+	<div id="payslipMenu">
+		<input type="submit" class="printButton" value="{% trans "Print now" %}" />
+		<form action="." method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form.as_p }}
+            <input type="submit" name="download" value="{% trans "Get PDF" %}" />
+		</form>
+		<a href="{% url "payslip_generator" %}">{% trans "Clear payslip" %}</a>
+	</div>
+	<table>
+		<tbody>
+			<tr>
+				<td><h1>{% trans "Payslip" %}</h1></td>
+				<td class="tdMiddle">
+					<p class="box">
+						<span class="boxHead">{% trans "Printed date" %}:</span><br />
+						<span class="boxContent">{% now "DATE_FORMAT" %}</span>
+					</p>
+				</td>
+				<td>
+					<p class="box">
+						<span class="boxHead">{% trans "Period" %}:</span><br />
+						<span class="boxContent">{{ date_start|date }} - {{ date_end|date }}</span>
+					</p>
+				</td>
+				<td class="tdSmall">
+					<p class="box">
+						<span class="boxHead">{% trans "HR nr." %}:</span><br />
+						<span class="boxContent">{{ employee.hr_number }}</span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="subHead">{% trans "Considered as income receipt. Please store it carefully." %}</p>
+	<table>
+		<tbody>
+			<tr>
+				<td id="address">
+					<p id="addressCompany">{{ employee.company }}, {{ employee.company.address }}</p>
+					<p id="addressEmployee">
+						{{ employee.get_title_display }}<br />
+						{{ employee }}<br />
+						{{ employee.address|linebreaksbr }}
+					</p>
+				</td>
+				<td id="employeeExtraFields">
+					<table>
+						<tbody>
+							{% for field in employee.extra_fields.all %}
+								{% cycle '<tr>' '' '' '' %}
+									<td>
+										{% if field.value %}
+											<p class="box">
+												<span class="boxHead">{{ field.field_type.name }}:</span><br />
+												<span class="boxContent">{{ field.value }}</span>
+											</p>
+										{% endif %}
+									</td>
+								{% cycle '' '' '' '</tr>' %}
+								{% if forloop.last and not forloop.counter|divisibleby:4 %}
+									</tr>
+								{% endif %}
+							{% endfor %}
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>{% trans "Earnings / Deductions" %}</h2>
+	{% if payments %}
+		<table>
+			<thead>
+				<tr>
+					<th>{% trans "Payment type" %}</th>
+					{% for field_type in payment_extra_fields %}
+						<th>{{ field_type.name }}</th>
+					{% endfor %}
+					<th>{% trans "Month" %}</th>
+					<th>{% trans "Amount" %}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for payment in payments %}
+					<tr class="altFont">
+						<td>{{ payment.payment_type.name }}</td>
+						{% for field_type in payment_extra_fields %}
+							<td>{{ field_type|get_extra_field_value:payment }}</td>
+						{% endfor %}
+						<td>{% if payment.is_recurring %}{{ date_end|date:"M Y" }}{% else %}{{ payment.date|date:"M Y" }}{% endif %}</td>
+						<td>{{ payment.amount|floatformat:2 }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	<p class="sum">{% trans "Sum earnings" %}: <strong>{{ sum|floatformat:2 }}</strong></p>
+	<p class="sum">{% trans "Sum deductions" %}: <strong>{{ sum_neg|floatformat:2 }}</strong></p>
+	<h2>{% trans "Period sum" %}</h2>
+	<table>
+		<tbody>
+			<tr>
+				<td class="tdSmall">
+					<p class="box">
+						<span class="boxHead">{% trans "Gross earnings" %}:</span><br />
+						<span class="boxContent">{{ sum|floatformat:2 }}</span>
+					</p>
+				</td>
+				<td>
+					<p id="payoutHead">{% trans "Payout" %}:</p>
+				</td>
+				<td class="tdMini">
+					<p id="payoutCurrency">{{ currency }}</p>
+				</td>
+				<td class="tdSmall">
+					<p id="payoutSum">{{ sum|add:sum_neg|floatformat:2 }}</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>{% blocktrans with date=date_end|date %}Year total <small>(until {{ date }})</small>{% endblocktrans %}</h2>
+	<table>
+		<tbody>
+			<tr>
+				<td class="tdMini">
+					<p class="box">
+						<span class="boxHead">{% trans "Gross total" %}:</span><br />
+						<span class="boxContent">{{ sum_year|floatformat:2 }}</span>
+					</p>
+				</td>
+				<td class="tdMini">
+					<p class="box">
+						<span class="boxHead">{% trans "Net total" %}:</span><br />
+						<span class="boxContent">{{ sum_year_neg|floatformat:2 }}</span>
+					</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="{% static "payslip/js/payslip.js" %}"></script>
+</body>
+</html>

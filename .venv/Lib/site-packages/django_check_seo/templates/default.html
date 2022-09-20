@@ -1,0 +1,110 @@
+{% load cms_tags i18n static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Django check SEO</title>
+    <link rel="stylesheet" type="text/css" href="{% static "django-check-seo/design.css" %}" />
+  </head>
+  <body>
+    <div id="content">
+
+      <main>
+        <h1><img src="{% static "django-check-seo/logo-small.png" %}" alt="Django Check SEO" /></h1>
+        <article>
+
+          <ul class="keywords">
+            <li class="title">{% trans "Keywords:" %}</li>
+            {% if keywords|length > 0 %}
+              {{ keywords|unordered_list }}
+            {% else %}
+              <li class="no-keywords">{% trans "no keywords!" %}</li>
+            {% endif %}
+          </ul>
+
+          <h2>
+            {% autoescape off %}{{ nb_problems_warnings }}{% endautoescape %}
+          </h2>
+
+          <h3>{% trans "on the public page" %}</h3>
+
+          <ul class="red-list list">
+            {% for problem in problems %}
+                {% include "element.html" with element=problem %}
+            {% endfor %}
+          </ul>
+
+          <ul class="yellow-list list">
+            {% for warning in warnings %}
+                {% include "element.html" with element=warning %}
+            {% endfor %}
+          </ul>
+
+          {% if success|length > 0 %}
+            <hr />
+            <ul class="green-list list">
+              <h2>{%trans "Successful checks" %}</h2>
+              {% for successful_check in success %}
+                {% include "element.html" with element=successful_check %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+        </article>
+
+      </main>
+
+
+      <aside>
+        <article>
+          <h2>{% trans "About" %}</h2>
+
+          <p>
+            {% trans "The main objective of this application is to check the aspects of the web pages involved in SEO, to ensure that the page content will be correctly crawled by search engines." %}
+          </p>
+        </article>
+
+        <hr />
+
+        <article>
+          <h2>{% trans "Documentation" %}</h2>
+
+          <p>
+            {% blocktrans %}The documentation is available via the <a href="https://github.com/kapt-labs/django-check-seo/wiki" target="_blank">project wiki</a>.{% endblocktrans %}
+          </p>
+        </article>
+
+        <hr />
+
+        <article class="not-important grey-list">
+          <h2>Raw data</h2>
+
+          <p>{% blocktrans %}Raw data are here for debug purposes. Join at least your settings if you're submitting <a href="https://github.com/kapt-labs/django-check-seo/issues">a new issue</a>.{% endblocktrans %}</p>
+
+          <div class="list">
+            <details>
+              <summary>
+                {% trans "See extracted html" %}
+              </summary>
+              <pre>{{ html }}</pre>
+            </details>
+            <details>
+              <summary>
+                {% trans "See extracted content" %}
+              </summary>
+              <pre>{{ text }}</pre>
+            </details>
+            <details>
+              <summary>
+                {% trans "See settings" %}
+              </summary>
+              <pre>{{ settings }}</pre>
+            </details>
+          </div>
+        </article>
+      </aside>
+
+    </div>
+
+  </body>
+</html>

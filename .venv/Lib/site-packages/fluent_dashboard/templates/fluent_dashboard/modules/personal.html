@@ -1,0 +1,20 @@
+{% extends "admin_tools/dashboard/module.html" %}
+{% load i18n %}
+
+{% block module_content %}
+  {# separate include, make it easier to override the text #}
+  {% include "fluent_dashboard/modules/personal_text.html" %}
+
+  {# Keep supporting children in this node, in case it's being used #}
+  {% if module.children %}
+  <ul class="{{ module.layout }}">
+  {% for child in module.children %}
+    <li class="{% cycle 'odd' 'even' %}">
+    <a{% if child.external %} class="external-link"{% endif %} href="{{ child.url }}" {% if child.description %} title="{{ child.description }}"{% endif %}>{{ child.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+{% endblock %}
+
+

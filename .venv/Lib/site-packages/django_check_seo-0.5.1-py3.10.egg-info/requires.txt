@@ -1,0 +1,4 @@
+djangocms-page-meta
+requests
+beautifulsoup4
+lxml

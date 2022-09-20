@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Translators:
+# yakky <i.spalletti@nephila.digital>, 2014,2017,2019-2020
+msgid ""
+msgstr ""
+"Project-Id-Version: djangocms-page-meta\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-20 13:10+0100\n"
+"PO-Revision-Date: 2020-12-20 12:12+0000\n"
+"Last-Translator: yakky <i.spalletti@nephila.digital>\n"
+"Language-Team: Italian (http://www.transifex.com/nephila/djangocms-page-meta/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:32
+msgid "OpenGraph"
+msgstr "OpenGraph"
+
+#: admin.py:42
+msgid "Twitter Cards"
+msgstr "Twitter Cards"
+
+#: admin.py:43
+msgid "Schema.org microdata"
+msgstr "Microdata Schema.org"
+
+#: apps.py:7
+msgid "django CMS Page Meta"
+msgstr "django CMS Page Meta"
+
+#: cms_toolbars.py:19
+msgid "Meta-information"
+msgstr "Metainformazioni"
+
+#: cms_toolbars.py:20
+msgid "Common"
+msgstr "Generale"
+
+#: models.py:26
+msgid "Used if title image is empty."
+msgstr "Usato se l'immagine per il Titolo è vuota."
+
+#: models.py:30 models.py:61 models.py:65
+msgid "Resource type"
+msgstr "Tipo di risorsa"
+
+#: models.py:34 models.py:69
+msgid "Use Article for generic pages."
+msgstr "Usa \"Articolo\" per le pagine normali."
+
+#: models.py:38
+msgid "Author account"
+msgstr "Account dell'Autore"
+
+#: models.py:43
+msgid "Author Facebook URL"
+msgstr "URL Facebook dell'Autore"
+
+#: models.py:45
+msgid "Author Facebook ID"
+msgstr "Facebook ID dell'Autore"
+
+#: models.py:45
+msgid "Use Facebook numeric ID."
+msgstr "Inserisco il Facebook ID numerico"
+
+#: models.py:47
+msgid "Website Facebook URL"
+msgstr "URL Facebook del sito"
+
+#: models.py:48
+msgid "Facebook App ID"
+msgstr "App ID Facebook"
+
+#: models.py:49
+msgid "Facebook Pages ID"
+msgstr "ID Facebook della pagina"
+
+#: models.py:51
+msgid "Author Twitter Account"
+msgstr "Account Twitter dell'autore"
+
+#: models.py:51 models.py:58
+msgid "'@' character not required."
+msgstr "Carattere \"@\" non richiesto."
+
+#: models.py:54
+msgid "Website Twitter Account"
+msgstr "Account Twitter del sito"
+
+#: models.py:73 models.py:74
+msgid "Page meta info (all languages)"
+msgstr "Metainformazioni (tuttle le lingue)"
+
+#: models.py:77
+#, python-brace-format
+msgid "Page Meta for {0}"
+msgstr "Meta-info pagina per {0}"
+
+#: models.py:98
+msgid "If empty, page image will be used for all languages."
+msgstr "Se vuota, l'immagine della pagina sarà usata in tutte le lingue."
+
+#: models.py:103
+msgid "Facebook Description"
+msgstr "Descrizione Facebook"
+
+#: models.py:104
+msgid "Twitter Description"
+msgstr "Descrizione Twitter"
+
+#: models.py:106
+msgid "Schemaorg Name"
+msgstr "Nome Schema.org"
+
+#: models.py:106
+msgid "Name of the item."
+msgstr "Nome dell'elemento"
+
+#: models.py:109
+#| msgid "Facebook Description"
+msgid "Schemaorg Description"
+msgstr "Descrizione Schema.org"
+
+#: models.py:109
+msgid "Description of the item."
+msgstr "Descrizione dell'elemento"
+
+#: models.py:113 models.py:114 models.py:163 models.py:164
+msgid "Page meta info (language-dependent)"
+msgstr "Metainformazioni (per lingua)"
+
+#: models.py:117
+#, python-brace-format
+msgid "Title Meta for {0}"
+msgstr "Meta-info titolo per {0}"
+
+#: models.py:145
+msgid "attribute"
+msgstr "attributo"
+
+#: models.py:147
+msgid "Custom attribute"
+msgstr "Attributo personalizzato"
+
+#: models.py:152
+msgid "name"
+msgstr "nome"
+
+#: models.py:154
+msgid "Meta attribute name"
+msgstr "Nome dell'attributo"
+
+#: models.py:157
+msgid "value"
+msgstr "valore"
+
+#: models.py:159
+msgid "Meta attribute value"
+msgstr "Valore dell'attributo"
+
+#: models.py:168 models.py:170
+#, python-brace-format
+#| msgid "Attribute {0} for page {1}"
+msgid "Attribute {0} for {1}"
+msgstr "Attributo {0} di {1}"
+
+#~ msgid "Google+ Snippets"
+#~ msgstr "Google+ Snippets"
+
+#~ msgid "Author Google+ URL"
+#~ msgstr "Author Google+ URL"
+
+#~ msgid "Use the Google+ Name (together with \"+\")"
+#~ msgstr "Use the Google+ Name (together with \"+\")"
+
+#~ msgid "Google+ Description"
+#~ msgstr "Google+ Description"
+
+#~ msgid "Attribute {0} for title {1}"
+#~ msgstr "Attribute {0} for title {1}"
+
+#~ msgid "Article"
+#~ msgstr "Article"
+
+#~ msgid "Website"
+#~ msgstr "Website"
+
+#~ msgid "Summary"
+#~ msgstr "Summary"
+
+#~ msgid "Summary large image"
+#~ msgstr "Summary large image"
+
+#~ msgid "Product"
+#~ msgstr "Product"
+
+#~ msgid "Photo"
+#~ msgstr "Photo"
+
+#~ msgid "Player"
+#~ msgstr "Player"
+
+#~ msgid "App"
+#~ msgstr "App"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Book"
+#~ msgstr "Book"
+
+#~ msgid "Event"
+#~ msgstr "Event"
+
+#~ msgid "LocalBusiness"
+#~ msgstr "LocalBusiness"
+
+#~ msgid "Organization"
+#~ msgstr "Organization"
+
+#~ msgid "Person"
+#~ msgstr "Person"
+
+#~ msgid "Review"
+#~ msgstr "Review"

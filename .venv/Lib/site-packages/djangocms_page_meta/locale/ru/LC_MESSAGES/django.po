@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Translators:
+# Rustam Mirzaev <mirus@2x2.pw>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: djangocms-page-meta\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-20 13:10+0100\n"
+"PO-Revision-Date: 2020-12-20 12:11+0000\n"
+"Last-Translator: yakky <i.spalletti@nephila.digital>\n"
+"Language-Team: Russian (http://www.transifex.com/nephila/djangocms-page-meta/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: admin.py:32
+msgid "OpenGraph"
+msgstr "OpenGraph"
+
+#: admin.py:42
+msgid "Twitter Cards"
+msgstr "Twitter Cards"
+
+#: admin.py:43
+msgid "Schema.org microdata"
+msgstr ""
+
+#: apps.py:7
+msgid "django CMS Page Meta"
+msgstr ""
+
+#: cms_toolbars.py:19
+msgid "Meta-information"
+msgstr "Мета информация"
+
+#: cms_toolbars.py:20
+msgid "Common"
+msgstr "Общие"
+
+#: models.py:26
+msgid "Used if title image is empty."
+msgstr "Используется, если изображение отсутствует"
+
+#: models.py:30 models.py:61 models.py:65
+msgid "Resource type"
+msgstr "Тип ресурса"
+
+#: models.py:34 models.py:69
+msgid "Use Article for generic pages."
+msgstr "Использовать статью для общих страниц"
+
+#: models.py:38
+msgid "Author account"
+msgstr "Аккаунт автора"
+
+#: models.py:43
+msgid "Author Facebook URL"
+msgstr "URL автора на Facebook"
+
+#: models.py:45
+msgid "Author Facebook ID"
+msgstr "ID автора на Facebook"
+
+#: models.py:45
+msgid "Use Facebook numeric ID."
+msgstr "Использовать номерной идентификатор Facebook"
+
+#: models.py:47
+msgid "Website Facebook URL"
+msgstr "Адрес веб сайта на Facebook"
+
+#: models.py:48
+msgid "Facebook App ID"
+msgstr "ID приложения на Facebook"
+
+#: models.py:49
+msgid "Facebook Pages ID"
+msgstr ""
+
+#: models.py:51
+msgid "Author Twitter Account"
+msgstr "Аккаунт автора на Twitter"
+
+#: models.py:51 models.py:58
+msgid "'@' character not required."
+msgstr ""
+
+#: models.py:54
+msgid "Website Twitter Account"
+msgstr "Аккаунт сайта на Twitter"
+
+#: models.py:73 models.py:74
+msgid "Page meta info (all languages)"
+msgstr "Мета информация страницы(для всех языков)"
+
+#: models.py:77
+#, python-brace-format
+msgid "Page Meta for {0}"
+msgstr ""
+
+#: models.py:98
+msgid "If empty, page image will be used for all languages."
+msgstr "Если оставить пустым, изображение страницы будет использовано для всех языков."
+
+#: models.py:103
+msgid "Facebook Description"
+msgstr "Описание на Facebook"
+
+#: models.py:104
+msgid "Twitter Description"
+msgstr "Описание на Twitter"
+
+#: models.py:106
+msgid "Schemaorg Name"
+msgstr ""
+
+#: models.py:106
+msgid "Name of the item."
+msgstr ""
+
+#: models.py:109
+#| msgid "Facebook Description"
+msgid "Schemaorg Description"
+msgstr ""
+
+#: models.py:109
+msgid "Description of the item."
+msgstr ""
+
+#: models.py:113 models.py:114 models.py:163 models.py:164
+msgid "Page meta info (language-dependent)"
+msgstr "Мета информация страницы(языкозависимая)"
+
+#: models.py:117
+#, python-brace-format
+msgid "Title Meta for {0}"
+msgstr ""
+
+#: models.py:145
+msgid "attribute"
+msgstr ""
+
+#: models.py:147
+msgid "Custom attribute"
+msgstr ""
+
+#: models.py:152
+msgid "name"
+msgstr ""
+
+#: models.py:154
+msgid "Meta attribute name"
+msgstr ""
+
+#: models.py:157
+msgid "value"
+msgstr ""
+
+#: models.py:159
+msgid "Meta attribute value"
+msgstr ""
+
+#: models.py:168 models.py:170
+#, python-brace-format
+#| msgid "Attribute {0} for page {1}"
+msgid "Attribute {0} for {1}"
+msgstr ""
+
+#~ msgid "Google+ Snippets"
+#~ msgstr "Google+ Snippets"
+
+#~ msgid "Author Google+ URL"
+#~ msgstr "Author Google+ URL"
+
+#~ msgid "Use the Google+ Name (together with \"+\")"
+#~ msgstr "Use the Google+ Name (together with \"+\")"
+
+#~ msgid "Google+ Description"
+#~ msgstr "Google+ Description"
+
+#~ msgid "Attribute {0} for title {1}"
+#~ msgstr "Attribute {0} for title {1}"
+
+#~ msgid "Article"
+#~ msgstr "Article"
+
+#~ msgid "Website"
+#~ msgstr "Website"
+
+#~ msgid "Summary"
+#~ msgstr "Summary"
+
+#~ msgid "Summary large image"
+#~ msgstr "Summary large image"
+
+#~ msgid "Product"
+#~ msgstr "Product"
+
+#~ msgid "Photo"
+#~ msgstr "Photo"
+
+#~ msgid "Player"
+#~ msgstr "Player"
+
+#~ msgid "App"
+#~ msgstr "App"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Book"
+#~ msgstr "Book"
+
+#~ msgid "Event"
+#~ msgstr "Event"
+
+#~ msgid "LocalBusiness"
+#~ msgstr "LocalBusiness"
+
+#~ msgid "Organization"
+#~ msgstr "Organization"
+
+#~ msgid "Person"
+#~ msgstr "Person"
+
+#~ msgid "Review"
+#~ msgstr "Review"

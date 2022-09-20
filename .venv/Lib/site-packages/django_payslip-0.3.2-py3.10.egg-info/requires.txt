@@ -1,0 +1,4 @@
+django
+weasyprint
+django-libs
+python-dateutil

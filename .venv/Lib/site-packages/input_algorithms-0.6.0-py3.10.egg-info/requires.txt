@@ -1,0 +1,8 @@
+delfick_error>=1.6
+namedlist
+
+[tests]
+nose
+mock
+noseOfYeti
+delfick_error>=1.7.8
